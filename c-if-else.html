@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>If-Else Statements in C</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🔀 If-Else Statements in C</h1>
+        <p>C Programming Notes</p>
+    </header>
+
+    <main>
+
+        <div class="course">
+
+            <h2>What is If-Else?</h2>
+
+            <p>
+                If-else statements are used to make decisions in a C program.
+                They execute different blocks of code depending on whether
+                a condition is true or false.
+            </p>
+
+            <h2>1. if Statement</h2>
+
+            <p>
+                The <code>if</code> statement executes a block of code only
+                when the given condition is true.
+            </p>
+
+            <pre><code>
+if (condition)
+{
+    // statements
+}
+            </code></pre>
+
+            <h2>Example</h2>
+
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int age = 20;
+
+    if (age &gt;= 18)
+    {
+        printf("Eligible to vote");
+    }
+
+    return 0;
+}
+            </code></pre>
+
+            <h2>Output</h2>
+
+            <pre><code>
+Eligible to vote
+            </code></pre>
+
+            <h2>2. if-else Statement</h2>
+
+            <p>
+                The <code>if-else</code> statement executes one block when
+                the condition is true and another block when it is false.
+            </p>
+
+            <pre><code>
+if (condition)
+{
+    // statements
+}
+else
+{
+    // statements
+}
+            </code></pre>
+
+            <h2>Example</h2>
+
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int number;
+
+    printf("Enter a number: ");
+    scanf("%d", &amp;number);
+
+    if (number % 2 == 0)
+    {
+        printf("Even");
+    }
+    else
+    {
+        printf("Odd");
+    }
+
+    return 0;
+}
+            </code></pre>
+
+            <h2>3. else-if Ladder</h2>
+
+            <p>
+                An else-if ladder is used when there are multiple conditions
+                to check.
+            </p>
+
+            <pre><code>
+if (condition1)
+{
+    // statements
+}
+else if (condition2)
+{
+    // statements
+}
+else
+{
+    // statements
+}
+            </code></pre>
+
+            <h2>Example</h2>
+
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int marks;
+
+    printf("Enter marks: ");
+    scanf("%d", &amp;marks);
+
+    if (marks &gt;= 75)
+    {
+        printf("Excellent");
+    }
+    else if (marks &gt;= 40)
+    {
+        printf("Good");
+    }
+    else
+    {
+        printf("Fail");
+    }
+
+    return 0;
+}
+            </code></pre>
+
+            <h2>Important Points</h2>
+
+            <ul>
+                <li><code>if</code> is used to check a condition.</li>
+                <li><code>else</code> executes when the if condition is false.</li>
+                <li><code>else if</code> is used to check multiple conditions.</li>
+                <li>Use braces <code>{ }</code> to clearly define a block of statements.</li>
+                <li>Relational and logical operators are commonly used in conditions.</li>
+            </ul>
+
+            <h2>Practice Question</h2>
+
+            <p>
+                Write a C program to accept an integer and check whether
+                the number is positive, negative or zero using if-else statements.
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Programming Notes</p>
+    </footer>
+
+</body>
+
+</html>

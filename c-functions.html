@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming - Functions</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .topic {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        h3 {
+            color: #334155;
+        }
+
+        pre {
+            background-color: #111827;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>C Programming - Functions</h1>
+    <p>Learn how to create reusable blocks of code</p>
+</header>
+
+<div class="container">
+
+    <a href="index.html" class="back-btn">← Back to Notes</a>
+
+    <div class="topic">
+        <h2>1. What is a Function?</h2>
+
+        <p>
+            A function is a block of code that performs a specific task.
+            Functions make programs easier to understand, reuse and maintain.
+        </p>
+
+        <h3>Basic Syntax:</h3>
+
+        <pre>
+return_type function_name(parameters)
+{
+    // statements
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>2. Types of Functions</h2>
+
+        <ul>
+            <li><b>Library Functions</b> - already provided by C libraries.</li>
+            <li><b>User-Defined Functions</b> - created by the programmer.</li>
+        </ul>
+
+        <h3>Examples of Library Functions:</h3>
+
+        <pre>
+printf()
+scanf()
+strlen()
+sqrt()</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>3. Function Declaration</h2>
+
+        <p>
+            A function declaration tells the compiler about the function
+            before it is used.
+        </p>
+
+        <pre>
+int add(int, int);</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>4. Function Definition</h2>
+
+        <p>
+            The function definition contains the actual statements
+            that perform the task.
+        </p>
+
+        <pre>
+int add(int a, int b)
+{
+    return a + b;
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>5. Function Call</h2>
+
+        <p>
+            A function call is used to execute a function.
+        </p>
+
+        <pre>
+result = add(10, 20);</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>6. Simple Function Example</h2>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+void greet()
+{
+    printf("Hello, C Programming!");
+}
+
+int main()
+{
+    greet();
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Hello, C Programming!</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>7. Function with Parameters</h2>
+
+        <p>
+            Parameters allow us to pass values to a function.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+void greet(char name[])
+{
+    printf("Hello %s", name);
+}
+
+int main()
+{
+    greet("Harsh");
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Hello Harsh</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>8. Function with Return Value</h2>
+
+        <p>
+            A function can return a value using the <b>return</b> statement.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int add(int a, int b)
+{
+    return a + b;
+}
+
+int main()
+{
+    int result;
+
+    result = add(10, 20);
+
+    printf("Sum = %d", result);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Sum = 30</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>9. Function with No Parameter and No Return Value</h2>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+void display()
+{
+    printf("Welcome to C Programming");
+}
+
+int main()
+{
+    display();
+
+    return 0;
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>10. Function with Parameters and Return Value</h2>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int multiply(int a, int b)
+{
+    return a * b;
+}
+
+int main()
+{
+    int result = multiply(5, 4);
+
+    printf("Product = %d", result);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Product = 20</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>11. Advantages of Functions</h2>
+
+        <ul>
+            <li>Code can be reused.</li>
+            <li>Programs become easier to understand.</li>
+            <li>Large programs can be divided into smaller parts.</li>
+            <li>Debugging becomes easier.</li>
+            <li>Code maintenance becomes easier.</li>
+        </ul>
+    </div>
+
+
+    <div class="topic">
+        <h2>Quick Revision</h2>
+
+        <ul>
+            <li><b>Declaration</b> → tells the compiler about the function.</li>
+            <li><b>Definition</b> → contains the function's code.</li>
+            <li><b>Call</b> → executes the function.</li>
+            <li><b>Parameter</b> → value received by the function.</li>
+            <li><b>Return</b> → sends a value back from the function.</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

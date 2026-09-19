@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Loops - Programming Notes</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 0;
+            color: #222;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .topic {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        h3 {
+            color: #334155;
+        }
+
+        pre {
+            background-color: #111827;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h1>C Programming - Loops</h1>
+        <p>Learn how to repeat statements using loops</p>
+    </header>
+
+    <div class="container">
+
+        <a href="index.html" class="back-btn">← Back to Notes</a>
+
+        <div class="topic">
+            <h2>1. What are Loops?</h2>
+
+            <p>
+                Loops are used in C programming to repeatedly execute
+                a block of statements as long as a given condition is true.
+            </p>
+
+            <p>There are three main types of loops in C:</p>
+
+            <ul>
+                <li>for loop</li>
+                <li>while loop</li>
+                <li>do-while loop</li>
+            </ul>
+        </div>
+
+        <div class="topic">
+            <h2>2. For Loop</h2>
+
+            <p>
+                A <b>for loop</b> is generally used when we know how many
+                times we want to repeat a block of code.
+            </p>
+
+            <h3>Syntax:</h3>
+
+            <pre>
+for(initialization; condition; increment/decrement)
+{
+    // statements
+}</pre>
+
+            <h3>Example:</h3>
+
+            <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    for(int i = 1; i &lt;= 5; i++)
+    {
+        printf("%d\n", i);
+    }
+
+    return 0;
+}</pre>
+
+            <h3>Output:</h3>
+
+            <pre>
+1
+2
+3
+4
+5</pre>
+        </div>
+
+        <div class="topic">
+            <h2>3. While Loop</h2>
+
+            <p>
+                A <b>while loop</b> executes a block of code repeatedly
+                as long as the condition is true.
+            </p>
+
+            <h3>Syntax:</h3>
+
+            <pre>
+while(condition)
+{
+    // statements
+}</pre>
+
+            <h3>Example:</h3>
+
+            <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int i = 1;
+
+    while(i &lt;= 5)
+    {
+        printf("%d\n", i);
+        i++;
+    }
+
+    return 0;
+}</pre>
+
+            <h3>Output:</h3>
+
+            <pre>
+1
+2
+3
+4
+5</pre>
+        </div>
+
+        <div class="topic">
+            <h2>4. Do-While Loop</h2>
+
+            <p>
+                A <b>do-while loop</b> executes the statements at least
+                once before checking the condition.
+            </p>
+
+            <h3>Syntax:</h3>
+
+            <pre>
+do
+{
+    // statements
+}
+while(condition);</pre>
+
+            <h3>Example:</h3>
+
+            <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int i = 1;
+
+    do
+    {
+        printf("%d\n", i);
+        i++;
+    }
+    while(i &lt;= 5);
+
+    return 0;
+}</pre>
+
+            <h3>Output:</h3>
+
+            <pre>
+1
+2
+3
+4
+5</pre>
+        </div>
+
+        <div class="topic">
+            <h2>5. Break Statement</h2>
+
+            <p>
+                The <b>break</b> statement is used to immediately stop
+                a loop.
+            </p>
+
+            <h3>Example:</h3>
+
+            <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    for(int i = 1; i &lt;= 5; i++)
+    {
+        if(i == 3)
+        {
+            break;
+        }
+
+        printf("%d\n", i);
+    }
+
+    return 0;
+}</pre>
+
+            <h3>Output:</h3>
+
+            <pre>
+1
+2</pre>
+        </div>
+
+        <div class="topic">
+            <h2>6. Continue Statement</h2>
+
+            <p>
+                The <b>continue</b> statement skips the current iteration
+                and moves to the next iteration of the loop.
+            </p>
+
+            <h3>Example:</h3>
+
+            <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    for(int i = 1; i &lt;= 5; i++)
+    {
+        if(i == 3)
+        {
+            continue;
+        }
+
+        printf("%d\n", i);
+    }
+
+    return 0;
+}</pre>
+
+            <h3>Output:</h3>
+
+            <pre>
+1
+2
+4
+5</pre>
+        </div>
+
+        <div class="topic">
+            <h2>7. Quick Revision</h2>
+
+            <ul>
+                <li><b>for</b> → Used when the number of iterations is known.</li>
+                <li><b>while</b> → Condition is checked before execution.</li>
+                <li><b>do-while</b> → Executes at least once.</li>
+                <li><b>break</b> → Stops the loop.</li>
+                <li><b>continue</b> → Skips the current iteration.</li>
+            </ul>
+        </div>
+
+    </div>
+
+</body>
+</html>

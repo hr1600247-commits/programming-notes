@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming - Arrays</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .topic {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        h3 {
+            color: #334155;
+        }
+
+        pre {
+            background-color: #111827;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>C Programming - Arrays</h1>
+    <p>Learn how to store multiple values using arrays</p>
+</header>
+
+<div class="container">
+
+    <a href="index.html" class="back-btn">← Back to Notes</a>
+
+    <div class="topic">
+        <h2>1. What is an Array?</h2>
+
+        <p>
+            An array is a collection of elements of the same data type
+            stored under a single variable name.
+        </p>
+
+        <p>
+            Each element of an array is accessed using an index.
+            In C, array indexing starts from <b>0</b>.
+        </p>
+
+        <h3>Syntax:</h3>
+
+        <pre>
+data_type array_name[size];</pre>
+
+        <h3>Example:</h3>
+
+        <pre>
+int marks[5];</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>2. Initializing an Array</h2>
+
+        <p>
+            We can initialize an array while declaring it.
+        </p>
+
+        <h3>Example:</h3>
+
+        <pre>
+int marks[5] = {80, 75, 90, 85, 70};</pre>
+
+        <p>
+            Here, the array contains five integer values.
+        </p>
+    </div>
+
+
+    <div class="topic">
+        <h2>3. Accessing Array Elements</h2>
+
+        <p>
+            Array elements are accessed using their index number.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int marks[5] = {80, 75, 90, 85, 70};
+
+    printf("%d\n", marks[0]);
+    printf("%d\n", marks[1]);
+    printf("%d\n", marks[2]);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+80
+75
+90</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>4. Taking Array Input</h2>
+
+        <p>
+            We can use a loop and <b>scanf()</b> to take values from
+            the user.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[5];
+
+    for(int i = 0; i &lt; 5; i++)
+    {
+        printf("Enter element %d: ", i + 1);
+        scanf("%d", &amp;a[i]);
+    }
+
+    printf("Array elements are:\n");
+
+    for(int i = 0; i &lt; 5; i++)
+    {
+        printf("%d ", a[i]);
+    }
+
+    return 0;
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>5. One-Dimensional Array</h2>
+
+        <p>
+            A one-dimensional array stores elements in a single row.
+        </p>
+
+        <pre>
+int numbers[5] = {10, 20, 30, 40, 50};</pre>
+
+        <p>Indexes:</p>
+
+        <pre>
+Index:    0   1   2   3   4
+Value:   10  20  30  40  50</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>6. Two-Dimensional Array</h2>
+
+        <p>
+            A two-dimensional array stores data in rows and columns.
+            It is commonly used to represent matrices.
+        </p>
+
+        <h3>Example:</h3>
+
+        <pre>
+int matrix[2][3] = {
+    {1, 2, 3},
+    {4, 5, 6}
+};</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+1 2 3
+4 5 6</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>7. Finding Sum of Array Elements</h2>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[5] = {10, 20, 30, 40, 50};
+    int sum = 0;
+
+    for(int i = 0; i &lt; 5; i++)
+    {
+        sum = sum + a[i];
+    }
+
+    printf("Sum = %d", sum);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Sum = 150</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>8. Important Points to Remember</h2>
+
+        <ul>
+            <li>Array stores multiple values of the same data type.</li>
+            <li>Array indexing starts from 0.</li>
+            <li>The last index is always size - 1.</li>
+            <li>Loops are commonly used to process arrays.</li>
+            <li>Arrays can be one-dimensional or multi-dimensional.</li>
+        </ul>
+    </div>
+
+
+    <div class="topic">
+        <h2>Quick Revision</h2>
+
+        <pre>
+int a[5];
+
+a[0] = 10;
+a[1] = 20;
+a[2] = 30;
+a[3] = 40;
+a[4] = 50;</pre>
+
+        <p>
+            Remember: <b>First index = 0</b> and
+            <b>Last index = size - 1</b>.
+        </p>
+    </div>
+
+</div>
+
+</body>
+</html>

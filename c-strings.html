@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming - Strings</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .topic {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        h3 {
+            color: #334155;
+        }
+
+        pre {
+            background-color: #111827;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>C Programming - Strings</h1>
+    <p>Learn how to work with text and characters</p>
+</header>
+
+<div class="container">
+
+    <a href="index.html" class="back-btn">← Back to Notes</a>
+
+    <div class="topic">
+        <h2>1. What is a String?</h2>
+
+        <p>
+            A string is a sequence of characters stored in a character
+            array. In C, every string ends with a special null character
+            <b>\0</b>.
+        </p>
+
+        <h3>Example:</h3>
+
+        <pre>
+char name[] = "Harsh";</pre>
+
+        <p>
+            Internally, it is stored as:
+        </p>
+
+        <pre>
+H   a   r   s   h   \0</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>2. Declaring a String</h2>
+
+        <p>A string can be declared using a character array.</p>
+
+        <pre>
+char name[20];</pre>
+
+        <p>We can also initialize it while declaring:</p>
+
+        <pre>
+char name[] = "Harsh";</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>3. Taking String Input</h2>
+
+        <p>
+            The <b>scanf()</b> function can be used to take a single-word
+            string as input.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char name[50];
+
+    printf("Enter your name: ");
+    scanf("%49s", name);
+
+    printf("Hello %s", name);
+
+    return 0;
+}</pre>
+
+        <h3>Example Output:</h3>
+
+        <pre>
+Enter your name: Harsh
+Hello Harsh</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>4. Reading a Full Line</h2>
+
+        <p>
+            <b>fgets()</b> can be used when the input may contain spaces.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    char name[50];
+
+    printf("Enter your full name: ");
+    fgets(name, sizeof(name), stdin);
+
+    printf("Your name is: %s", name);
+
+    return 0;
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>5. String Functions</h2>
+
+        <p>
+            C provides several useful string functions through the
+            <b>string.h</b> header file.
+        </p>
+
+        <ul>
+            <li><b>strlen()</b> - finds the length of a string</li>
+            <li><b>strcpy()</b> - copies one string into another</li>
+            <li><b>strcat()</b> - joins two strings</li>
+            <li><b>strcmp()</b> - compares two strings</li>
+        </ul>
+    </div>
+
+
+    <div class="topic">
+        <h2>6. strlen()</h2>
+
+        <p>
+            The <b>strlen()</b> function returns the number of characters
+            in a string, excluding <b>\0</b>.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char name[] = "Harsh";
+
+    printf("Length = %zu", strlen(name));
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Length = 5</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>7. strcpy()</h2>
+
+        <p>
+            The <b>strcpy()</b> function copies one string into another.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char source[] = "Hello";
+    char destination[20];
+
+    strcpy(destination, source);
+
+    printf("%s", destination);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Hello</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>8. strcat()</h2>
+
+        <p>
+            The <b>strcat()</b> function joins two strings together.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char first[30] = "Hello ";
+    char second[] = "World";
+
+    strcat(first, second);
+
+    printf("%s", first);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Hello World</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>9. strcmp()</h2>
+
+        <p>
+            The <b>strcmp()</b> function compares two strings.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+int main()
+{
+    char a[] = "apple";
+    char b[] = "apple";
+
+    if(strcmp(a, b) == 0)
+    {
+        printf("Strings are equal");
+    }
+    else
+    {
+        printf("Strings are not equal");
+    }
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Strings are equal</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>10. Important Points</h2>
+
+        <ul>
+            <li>Strings are stored using character arrays.</li>
+            <li>Every C string ends with <b>\0</b>.</li>
+            <li><b>string.h</b> contains common string functions.</li>
+            <li><b>strlen()</b> finds string length.</li>
+            <li><b>strcpy()</b> copies strings.</li>
+            <li><b>strcat()</b> joins strings.</li>
+            <li><b>strcmp()</b> compares strings.</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>

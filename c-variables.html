@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Variables & Data Types in C</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>📦 Variables & Data Types</h1>
+        <p>C Programming Notes</p>
+    </header>
+
+    <main>
+
+        <div class="course">
+
+            <h2>What is a Variable?</h2>
+
+            <p>
+                A variable is a named memory location used to store a value
+                that can change during the execution of a program.
+            </p>
+
+            <h2>Variable Declaration</h2>
+
+            <p>
+                Before using a variable, we normally declare its data type
+                and name.
+            </p>
+
+            <pre><code>
+int age;
+float percentage;
+char grade;
+double cgpa;
+            </code></pre>
+
+            <h2>Variable Initialization</h2>
+
+            <p>
+                Initialization means assigning a value to a variable when
+                it is declared.
+            </p>
+
+            <pre><code>
+int age = 20;
+float percentage = 89.50;
+char grade = 'A';
+double cgpa = 8.75;
+            </code></pre>
+
+            <h2>Common Data Types</h2>
+
+            <ul>
+                <li><strong>int</strong> – stores whole numbers.</li>
+                <li><strong>float</strong> – stores decimal numbers.</li>
+                <li><strong>char</strong> – stores a single character.</li>
+                <li><strong>double</strong> – stores decimal values with higher precision.</li>
+            </ul>
+
+            <h2>Example Program</h2>
+
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int age = 20;
+    float percentage = 89.50;
+    char grade = 'A';
+    double cgpa = 8.75;
+
+    printf("Age = %d\n", age);
+    printf("Percentage = %.2f\n", percentage);
+    printf("Grade = %c\n", grade);
+    printf("CGPA = %.2lf\n", cgpa);
+
+    return 0;
+}
+            </code></pre>
+
+            <h2>Output</h2>
+
+            <pre><code>
+Age = 20
+Percentage = 89.50
+Grade = A
+CGPA = 8.75
+            </code></pre>
+
+            <h2>Important Points</h2>
+
+            <ul>
+                <li>Every variable should have a data type.</li>
+                <li>Variable names should follow C naming rules.</li>
+                <li>A variable can be assigned a new value during program execution.</li>
+                <li>Use single quotes for a character, such as <code>'A'</code>.</li>
+            </ul>
+
+            <h2>Practice Question</h2>
+
+            <p>
+                Write a C program that declares an integer, float, character
+                and double variable and displays their values.
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Programming Notes</p>
+    </footer>
+
+</body>
+
+</html>

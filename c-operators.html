@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Operators in C</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <h1>🔢 Operators in C</h1>
+        <p>C Programming Notes</p>
+    </header>
+
+    <main>
+
+        <div class="course">
+
+            <h2>What is an Operator?</h2>
+
+            <p>
+                An operator is a symbol that tells the compiler to perform
+                a specific operation on one or more values.
+            </p>
+
+            <h2>1. Arithmetic Operators</h2>
+
+            <p>Arithmetic operators are used to perform mathematical operations.</p>
+
+            <pre><code>
++    Addition
+-    Subtraction
+*    Multiplication
+/    Division
+%    Modulus
+            </code></pre>
+
+            <h2>Example</h2>
+
+            <pre><code>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a = 10;
+    int b = 3;
+
+    printf("Sum = %d\n", a + b);
+    printf("Difference = %d\n", a - b);
+    printf("Product = %d\n", a * b);
+    printf("Quotient = %d\n", a / b);
+    printf("Remainder = %d\n", a % b);
+
+    return 0;
+}
+            </code></pre>
+
+            <h2>Output</h2>
+
+            <pre><code>
+Sum = 13
+Difference = 7
+Product = 30
+Quotient = 3
+Remainder = 1
+            </code></pre>
+
+            <h2>2. Relational Operators</h2>
+
+            <p>
+                Relational operators are used to compare two values.
+                The result is generally either true (1) or false (0).
+            </p>
+
+            <pre><code>
+&gt;     Greater than
+&lt;     Less than
+&gt;=    Greater than or equal to
+&lt;=    Less than or equal to
+==    Equal to
+!=    Not equal to
+            </code></pre>
+
+            <h2>3. Logical Operators</h2>
+
+            <pre><code>
+&amp;&amp;    Logical AND
+||    Logical OR
+!     Logical NOT
+            </code></pre>
+
+            <h2>4. Assignment Operators</h2>
+
+            <pre><code>
+=     Assignment
++=    Add and assign
+-=    Subtract and assign
+*=    Multiply and assign
+/=    Divide and assign
+%=    Modulus and assign
+            </code></pre>
+
+            <h2>5. Increment and Decrement</h2>
+
+            <pre><code>
+++    Increment by 1
+--    Decrement by 1
+            </code></pre>
+
+            <h2>6. Bitwise Operators</h2>
+
+            <pre><code>
+&     Bitwise AND
+|     Bitwise OR
+^     Bitwise XOR
+&lt;&lt;    Left shift
+&gt;&gt;    Right shift
+            </code></pre>
+
+            <h2>Important Points</h2>
+
+            <ul>
+                <li><code>=</code> is assignment, while <code>==</code> is comparison.</li>
+                <li><code>%</code> gives the remainder of integer division.</li>
+                <li>Logical operators are commonly used with conditions.</li>
+                <li>Bitwise operators work at the bit level.</li>
+            </ul>
+
+            <h2>Practice Question</h2>
+
+            <p>
+                Write a C program that accepts two integers and displays
+                their sum, difference, product, quotient and remainder.
+            </p>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Programming Notes</p>
+    </footer>
+
+</body>
+
+</html>

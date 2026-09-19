@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming - File Handling</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .topic {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        h3 {
+            color: #334155;
+        }
+
+        pre {
+            background-color: #111827;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>C Programming - File Handling</h1>
+    <p>Learn how to create, open, read and write files in C</p>
+</header>
+
+<div class="container">
+
+    <a href="index.html" class="back-btn">← Back to Notes</a>
+
+    <div class="topic">
+        <h2>1. What is File Handling?</h2>
+
+        <p>
+            File handling in C is used to store data permanently in a file.
+            It allows us to create, open, read, write and close files.
+        </p>
+
+        <p>
+            File handling is useful when we want data to remain saved
+            even after the program finishes.
+        </p>
+    </div>
+
+
+    <div class="topic">
+        <h2>2. File Pointer</h2>
+
+        <p>
+            A file pointer is used to access and work with a file.
+            It is declared using the <b>FILE</b> data type.
+        </p>
+
+        <pre>
+FILE *fp;</pre>
+
+        <p>
+            Here, <b>fp</b> is a file pointer.
+        </p>
+    </div>
+
+
+    <div class="topic">
+        <h2>3. Opening a File</h2>
+
+        <p>
+            The <b>fopen()</b> function is used to open a file.
+        </p>
+
+        <h3>Syntax:</h3>
+
+        <pre>
+FILE *fp;
+fp = fopen("filename", "mode");</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>4. File Opening Modes</h2>
+
+        <ul>
+            <li><b>r</b> - Opens a file for reading.</li>
+            <li><b>w</b> - Opens a file for writing.</li>
+            <li><b>a</b> - Opens a file for appending data.</li>
+            <li><b>r+</b> - Opens a file for reading and writing.</li>
+            <li><b>w+</b> - Opens a file for reading and writing and creates/truncates the file.</li>
+            <li><b>a+</b> - Opens a file for reading and appending.</li>
+        </ul>
+    </div>
+
+
+    <div class="topic">
+        <h2>5. Writing to a File</h2>
+
+        <p>
+            The <b>fprintf()</b> function can be used to write formatted
+            data into a file.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    FILE *fp;
+
+    fp = fopen("data.txt", "w");
+
+    fprintf(fp, "Hello C Programming!");
+
+    fclose(fp);
+
+    return 0;
+}</pre>
+
+        <p>
+            This program creates or overwrites <b>data.txt</b> and writes
+            the given message into it.
+        </p>
+    </div>
+
+
+    <div class="topic">
+        <h2>6. Reading from a File</h2>
+
+        <p>
+            The <b>fscanf()</b> function can be used to read formatted
+            data from a file.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    FILE *fp;
+    char text[50];
+
+    fp = fopen("data.txt", "r");
+
+    fscanf(fp, "%49s", text);
+
+    printf("%s", text);
+
+    fclose(fp);
+
+    return 0;
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>7. Closing a File</h2>
+
+        <p>
+            The <b>fclose()</b> function is used to close an opened file.
+        </p>
+
+        <pre>
+fclose(fp);</pre>
+
+        <p>
+            It is good practice to close a file after completing the required
+            operations.
+        </p>
+    </div>
+
+
+    <div class="topic">
+        <h2>8. Checking if File Opened Successfully</h2>
+
+        <p>
+            We should check whether the file was opened successfully.
+            If <b>fopen()</b> fails, it returns <b>NULL</b>.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    FILE *fp;
+
+    fp = fopen("data.txt", "r");
+
+    if (fp == NULL)
+    {
+        printf("File could not be opened.");
+    }
+    else
+    {
+        printf("File opened successfully.");
+        fclose(fp);
+    }
+
+    return 0;
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>9. Common File Handling Functions</h2>
+
+        <ul>
+            <li><b>fopen()</b> - Opens a file.</li>
+            <li><b>fclose()</b> - Closes a file.</li>
+            <li><b>fprintf()</b> - Writes formatted data to a file.</li>
+            <li><b>fscanf()</b> - Reads formatted data from a file.</li>
+            <li><b>fgetc()</b> - Reads one character from a file.</li>
+            <li><b>fputc()</b> - Writes one character to a file.</li>
+            <li><b>fgets()</b> - Reads a line/string from a file.</li>
+            <li><b>fputs()</b> - Writes a string to a file.</li>
+        </ul>
+    </div>
+
+
+    <div class="topic">
+        <h2>10. Important Points</h2>
+
+        <ul>
+            <li>Include <b>stdio.h</b> for file handling functions.</li>
+            <li>Use <b>FILE *</b> to declare a file pointer.</li>
+            <li>Use <b>fopen()</b> to open a file.</li>
+            <li>Always check if the file opened successfully.</li>
+            <li>Use <b>fclose()</b> after completing file operations.</li>
+            <li>Different modes are used for reading, writing and appending.</li>
+        </ul>
+    </div>
+
+
+    <div class="topic">
+        <h2>Quick Revision</h2>
+
+        <pre>
+FILE *fp;
+
+fp = fopen("data.txt", "w");
+
+fprintf(fp, "Hello World");
+
+fclose(fp);</pre>
+
+        <p>
+            Remember the basic sequence:
+        </p>
+
+        <h3>Open → Read/Write → Close</h3>
+    </div>
+
+</div>
+
+</body>
+</html>

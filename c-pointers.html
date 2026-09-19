@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C Programming - Pointers</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            color: #222;
+        }
+
+        header {
+            background-color: #1e293b;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+
+        .container {
+            width: 85%;
+            margin: 30px auto;
+        }
+
+        .topic {
+            background-color: white;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 10px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        h2 {
+            color: #2563eb;
+        }
+
+        h3 {
+            color: #334155;
+        }
+
+        pre {
+            background-color: #111827;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        .back-btn {
+            display: inline-block;
+            background-color: #2563eb;
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 6px;
+            margin-bottom: 20px;
+        }
+
+        .back-btn:hover {
+            background-color: #1d4ed8;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>C Programming - Pointers</h1>
+    <p>Understand memory addresses and pointers</p>
+</header>
+
+<div class="container">
+
+    <a href="index.html" class="back-btn">← Back to Notes</a>
+
+    <div class="topic">
+        <h2>1. What is a Pointer?</h2>
+
+        <p>
+            A pointer is a variable that stores the memory address
+            of another variable.
+        </p>
+
+        <h3>Syntax:</h3>
+
+        <pre>
+data_type *pointer_name;</pre>
+
+        <h3>Example:</h3>
+
+        <pre>
+int *ptr;</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>2. Address-of Operator (&amp;)</h2>
+
+        <p>
+            The <b>&amp;</b> operator is called the address-of operator.
+            It gives the memory address of a variable.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x = 10;
+
+    printf("Value = %d\n", x);
+    printf("Address = %p", (void*)&amp;x);
+
+    return 0;
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>3. Dereference Operator (*)</h2>
+
+        <p>
+            The <b>*</b> operator is used to access the value stored
+            at the address held by a pointer.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x = 10;
+    int *ptr = &amp;x;
+
+    printf("Value of x = %d\n", x);
+    printf("Value using pointer = %d", *ptr);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Value of x = 10
+Value using pointer = 10</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>4. Pointer Example</h2>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int number = 25;
+    int *ptr;
+
+    ptr = &amp;number;
+
+    printf("Number = %d\n", number);
+    printf("Address = %p\n", (void*)ptr);
+    printf("Value using pointer = %d\n", *ptr);
+
+    return 0;
+}</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>5. Changing a Value Using Pointer</h2>
+
+        <p>
+            A pointer can be used to change the value of the variable
+            whose address it stores.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int x = 10;
+    int *ptr = &amp;x;
+
+    *ptr = 50;
+
+    printf("x = %d", x);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+x = 50</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>6. Pointer and Arrays</h2>
+
+        <p>
+            The name of an array represents the address of its first
+            element in many expressions.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int a[3] = {10, 20, 30};
+    int *ptr = a;
+
+    printf("%d\n", *ptr);
+    printf("%d\n", *(ptr + 1));
+    printf("%d\n", *(ptr + 2));
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+10
+20
+30</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>7. Pointers and Functions</h2>
+
+        <p>
+            Pointers can be passed to functions so that the function
+            can modify the original variables.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+void change(int *x)
+{
+    *x = 100;
+}
+
+int main()
+{
+    int number = 10;
+
+    change(&amp;number);
+
+    printf("Number = %d", number);
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Number = 100</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>8. NULL Pointer</h2>
+
+        <p>
+            A NULL pointer does not point to a valid memory location.
+            It is commonly used when a pointer does not currently have
+            a valid address.
+        </p>
+
+        <pre>
+#include &lt;stdio.h&gt;
+
+int main()
+{
+    int *ptr = NULL;
+
+    if(ptr == NULL)
+    {
+        printf("Pointer is NULL");
+    }
+
+    return 0;
+}</pre>
+
+        <h3>Output:</h3>
+
+        <pre>
+Pointer is NULL</pre>
+    </div>
+
+
+    <div class="topic">
+        <h2>9. Important Pointer Terms</h2>
+
+        <ul>
+            <li><b>Pointer</b> → stores an address.</li>
+            <li><b>&amp;</b> → gets the address of a variable.</li>
+            <li><b>*</b> → accesses the value at an address.</li>
+            <li><b>NULL</b> → represents a pointer with no valid target.</li>
+        </ul>
+    </div>
+
+
+    <div class="topic">
+        <h2>10. Quick Revision</h2>
+
+        <pre>
+int x = 10;
+int *ptr = &amp;x;</pre>
+
+        <p>
+            Here:
+        </p>
+
+        <ul>
+            <li><b>x</b> stores the value 10.</li>
+            <li><b>&amp;x</b> gives the address of x.</li>
+            <li><b>ptr</b> stores the address of x.</li>
+            <li><b>*ptr</b> gives the value stored in x.</li>
+        </ul>
+    </div>
+
+</div>
+
+</body>
+</html>
